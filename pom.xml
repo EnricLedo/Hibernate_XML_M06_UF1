@@ -9,6 +9,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>dam2.m06uf1pracmj.M06UF1PracMJ</exec.mainClass>
+        <exec.mainClass>presentacion.M06UF1PracMJ</exec.mainClass>
     </properties>
 </project>
