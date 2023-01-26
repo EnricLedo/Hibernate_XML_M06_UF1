@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
-
 package presentacion;
 
+import static logica.Importar.importarXml;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import static presentacion.Menu1.mostrarMenu1;
@@ -18,19 +18,17 @@ import static presentacion.Menu5.mostrarMenu5;
  * @author ivan
  */
 public class M06UF1PracMJ {
+
     public static final Scanner entrada = new Scanner(System.in);
 
     public static void main(String[] args) {
         boolean salir = false;
-        String ruta;
         int opcion;
-
+        
         /**
          * IMPORTACIÓN DEL ARCHIVO XML
          */
-        System.out.println("Introduce la ruta del archivo a importar:");
-        ruta = entrada.nextLine();
-        System.out.println("Se ha importado el fichero XML. \n");
+        importarXml();
 
         /**
          * MENÚ PRINCIPAL
@@ -43,7 +41,7 @@ public class M06UF1PracMJ {
                     + "\t 4. Búsqueda por categoría. \n"
                     + "\t 5. Más información (HELP). \n"
                     + "\t 0. Salir.");
-            
+
             try {
                 opcion = entrada.nextInt();
 
