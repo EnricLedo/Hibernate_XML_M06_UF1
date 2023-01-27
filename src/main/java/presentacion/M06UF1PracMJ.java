@@ -7,6 +7,7 @@ package presentacion;
 import static logica.Importar.importarXml;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import javax.xml.bind.JAXBException;
 import static presentacion.Menu1.mostrarMenu1;
 import static presentacion.Menu2.mostrarMenu2;
 import static presentacion.Menu3.mostrarMenu3;
@@ -21,7 +22,7 @@ public class M06UF1PracMJ {
 
     public static final Scanner entrada = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JAXBException {
         boolean salir = false;
         int opcion;
         
