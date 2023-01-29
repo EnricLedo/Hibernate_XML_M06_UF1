@@ -4,7 +4,6 @@
  */
 package logica;
 
-import dao.Curso;
 import dao.Cursos;
 import java.io.File;
 import javax.xml.bind.JAXBContext;
@@ -28,10 +27,6 @@ public class Importar {
         
         Cursos cursos = (Cursos) unmarshaller.unmarshal(file);
         Datos.listaSingleton = cursos.getCursos();
-
-        for (Curso c : Datos.listaSingleton) {
-            System.out.println(c.getAreaEstudios() + " " + c.getCentro() + " " + c.getIdioma() + " " + c.getPais() + " " + c.getUniversidad());
-        }
 
         System.out.println("\nSe ha importado el fichero XML. \n");
     }

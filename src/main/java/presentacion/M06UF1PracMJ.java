@@ -5,6 +5,7 @@
 package presentacion;
 
 import java.io.File;
+import java.io.IOException;
 import static logica.Importar.importarXml;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -25,7 +26,7 @@ public class M06UF1PracMJ {
     public static final Scanner entrada = new Scanner(System.in);
     //public static File archivoXml;
 
-    public static void main(String[] args) throws JAXBException {
+    public static void main(String[] args) throws JAXBException, IOException {
         boolean salir = false;
         int opcion;
 
