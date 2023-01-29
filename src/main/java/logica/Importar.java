@@ -21,19 +21,19 @@ public class Importar {
 
     /**
      * IMPORTACIÓN DEL ARCHIVO XML
+     * @throws javax.xml.bind.JAXBException
      */
-    public static void importarXml() throws JAXBException {
+    public static void importarXml(File file) throws JAXBException {
 
         JAXBContext context = JAXBContext.newInstance(Cursos.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();
-
-        System.out.println("Introduce la ruta del archivo a importar:");
-        String ruta = entrada.nextLine();
-        File archivoXml = new File(ruta);
-        Cursos cursos = (Cursos) unmarshaller.unmarshal(archivoXml);
+        
+        Cursos cursos = (Cursos) unmarshaller.unmarshal(file);
+        //Datos.setDatos((Datos) cursos.getCursos());
         List<Curso> lista = cursos.getCursos();
+        Datos.listaSingleton = cursos.getCursos();
 
-        for (Curso c : lista) {
+        for (Curso c : Datos.listaSingleton) {
             System.out.println(c.getAreaEstudios() + " " + c.getCentro() + " " + c.getIdioma() + " " + c.getPais() + " " + c.getUniversidad());
         }
 

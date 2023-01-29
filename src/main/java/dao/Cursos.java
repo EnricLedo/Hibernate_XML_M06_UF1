@@ -17,17 +17,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement (name = "Rows")
 public class Cursos {
     
-    private List<Curso> cursos = new ArrayList<Curso>();
+    private ArrayList<Curso> cursos;
 
     public Cursos() {
     }
     
     @XmlElement(name = "Row")
-    public List<Curso> getCursos() {
+    public ArrayList<Curso> getCursos() {
         return cursos;
     }
 
-    public void setCursos(List<Curso> cursos) {
+    public void setCursos(ArrayList<Curso> cursos) {
         this.cursos = cursos;
     }
 

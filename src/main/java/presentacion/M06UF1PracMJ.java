@@ -4,6 +4,7 @@
  */
 package presentacion;
 
+import java.io.File;
 import static logica.Importar.importarXml;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -21,6 +22,7 @@ import static presentacion.Menu5.mostrarMenu5;
 public class M06UF1PracMJ {
 
     public static final Scanner entrada = new Scanner(System.in);
+    //public static File archivoXml;
 
     public static void main(String[] args) throws JAXBException {
         boolean salir = false;
@@ -29,7 +31,10 @@ public class M06UF1PracMJ {
         /**
          * IMPORTACIÓN DEL ARCHIVO XML
          */
-        importarXml();
+        System.out.println("Introduce la ruta del archivo a importar:");
+        String ruta = entrada.nextLine();
+        File archivoXml = new File(ruta);
+        importarXml(archivoXml);
 
         /**
          * MENÚ PRINCIPAL

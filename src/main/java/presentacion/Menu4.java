@@ -4,6 +4,11 @@
  */
 package presentacion;
 
+import dao.Curso;
+import java.util.ArrayList;
+import javax.xml.bind.JAXBException;
+import static logica.Busqueda.buscarAreaEstudios;
+import logica.Datos;
 import static presentacion.M06UF1PracMJ.entrada;
 
 /**
@@ -12,7 +17,7 @@ import static presentacion.M06UF1PracMJ.entrada;
  */
 public class Menu4 {
 
-    public static void mostrarMenu4() {
+    public static void mostrarMenu4() throws JAXBException {
         String sOpcion;
         boolean salir4 = false;
 
@@ -30,10 +35,7 @@ public class Menu4 {
                 sOpcion = entrada.nextLine();
                 switch (sOpcion) {
                     case "a":
-                        System.out.println("4.1 Introduce el Área de estudios que deseas buscar:");
-                        sOpcion = entrada.nextLine();
-                        System.out.println("4.2 Estas son las coincidencias encontradas:");
-                        System.out.println("BÚSQUEDA. \n");
+                        buscarAreaEstudios();
                         salir4 = true;
                         break;
 
@@ -85,7 +87,6 @@ public class Menu4 {
             } catch (Exception ex) {
                 System.out.println("Elige una opción correcta (a-f).");
             }
-
         } while (!salir4);
 
     }
