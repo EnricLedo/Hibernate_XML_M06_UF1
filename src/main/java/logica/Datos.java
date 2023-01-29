@@ -6,11 +6,10 @@ package logica;
 
 import dao.Curso;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
- * @author DAM
+ * @author ivan
  */
 public class Datos {
 
@@ -18,16 +17,6 @@ public class Datos {
 
     private Datos(ArrayList<Curso> cursos) {
         this.listaSingleton = cursos;
-    }
-
-    public static ArrayList<Curso> getListSingleton() {
-        if (listaSingleton == null) {
-            listaSingleton = new ArrayList<>();
-        } else {
-            System.out.println("No se puede crear el objeto " + listaSingleton + " porque ya existe un objeto de la clase SoyUnico");
-        }
-
-        return listaSingleton;
     }
 
     public static ArrayList<Curso> getListaSingleton() {

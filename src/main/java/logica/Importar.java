@@ -7,15 +7,13 @@ package logica;
 import dao.Curso;
 import dao.Cursos;
 import java.io.File;
-import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import static presentacion.M06UF1PracMJ.entrada;
 
 /**
  *
- * @author Ivan
+ * @author ivan
  */
 public class Importar {
 
@@ -29,8 +27,6 @@ public class Importar {
         Unmarshaller unmarshaller = context.createUnmarshaller();
         
         Cursos cursos = (Cursos) unmarshaller.unmarshal(file);
-        //Datos.setDatos((Datos) cursos.getCursos());
-        List<Curso> lista = cursos.getCursos();
         Datos.listaSingleton = cursos.getCursos();
 
         for (Curso c : Datos.listaSingleton) {
@@ -38,7 +34,6 @@ public class Importar {
         }
 
         System.out.println("\nSe ha importado el fichero XML. \n");
-
     }
 
 }

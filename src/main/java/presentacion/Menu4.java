@@ -4,11 +4,13 @@
  */
 package presentacion;
 
-import dao.Curso;
-import java.util.ArrayList;
 import javax.xml.bind.JAXBException;
 import static logica.Busqueda.buscarAreaEstudios;
-import logica.Datos;
+import static logica.Busqueda.buscarCentro;
+import static logica.Busqueda.buscarIdioma;
+import static logica.Busqueda.buscarPais;
+import static logica.Busqueda.buscarPlazasOfertadas;
+import static logica.Busqueda.buscarUniversidad;
 import static presentacion.M06UF1PracMJ.entrada;
 
 /**
@@ -40,42 +42,27 @@ public class Menu4 {
                         break;
 
                     case "b":
-                        System.out.println("4.1 Introduce el Centro que deseas buscar:");
-                        sOpcion = entrada.nextLine();
-                        System.out.println("4.2 Estas son las coincidencias encontradas:");
-                        System.out.println("BÚSQUEDA. \n");
+                        buscarCentro();
                         salir4 = true;
                         break;
 
                     case "c":
-                        System.out.println("4.1 Introduce el Idioma que deseas buscar:");
-                        sOpcion = entrada.nextLine();
-                        System.out.println("4.2 Estas son las coincidencias encontradas:");
-                        System.out.println("BÚSQUEDA. \n");
+                        buscarIdioma();
                         salir4 = true;
                         break;
 
                     case "d":
-                        System.out.println("4.1 Introduce el País que deseas buscar:");
-                        sOpcion = entrada.nextLine();
-                        System.out.println("4.2 Estas son las coincidencias encontradas:");
-                        System.out.println("BÚSQUEDA. \n");
+                        buscarPais();
                         salir4 = true;
                         break;
 
                     case "e":
-                        System.out.println("4.1 Introduce la Universidad que deseas buscar:");
-                        sOpcion = entrada.nextLine();
-                        System.out.println("4.2 Estas son las coincidencias encontradas:");
-                        System.out.println("BÚSQUEDA. \n");
+                        buscarUniversidad();
                         salir4 = true;
                         break;
 
                     case "f":
-                        System.out.println("4.1 Introduce las Plazas ofertadas que deseas buscar:");
-                        sOpcion = entrada.nextLine();
-                        System.out.println("4.2 Estas son las coincidencias encontradas:");
-                        System.out.println("BÚSQUEDA. \n");
+                        buscarPlazasOfertadas();
                         salir4 = true;
                         break;
 
@@ -84,7 +71,7 @@ public class Menu4 {
                         break;
                 }
 
-            } catch (Exception ex) {
+            } catch (JAXBException ex) {
                 System.out.println("Elige una opción correcta (a-f).");
             }
         } while (!salir4);
