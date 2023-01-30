@@ -5,7 +5,7 @@
 package presentacion;
 
 /**
- *
+ * MENÚ 5: MUESTRA UNA INFORMACIÓN MÁS DETALLADA DE CADA UNA DE LAS OPCIONES DEL MENÚ PRINCIPAL
  * @author ivan
  */
 public class Menu5 {

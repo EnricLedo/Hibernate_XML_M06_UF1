@@ -7,7 +7,7 @@ package presentacion;
 import static presentacion.M06UF1PracMJ.entrada;
 
 /**
- *
+ * MENÚ 2: DA LA OPCIÓN DE CIFRAR/DESCIFRAR UN FICHERO
  * @author ivan
  */
 public class Menu2 {

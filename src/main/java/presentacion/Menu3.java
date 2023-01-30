@@ -12,7 +12,8 @@ import static logica.Informe.topIdioma;
 import static presentacion.M06UF1PracMJ.entrada;
 
 /**
- *
+ * MENÚ 3: DA LA OPCIÓN DE MOSTRAR UN INFORME SEGÚN UN TIPO DE DATOS Y 
+ * ALMACENAR EL RESULTADO EN UN ARCHIVO A ELECCIÓN DEL USUARIO
  * @author ivan
  */
 public class Menu3 {
@@ -38,7 +39,7 @@ public class Menu3 {
                         informePais();
                         System.out.println("3.2 Indica dónde se guardará el informe:");
                         ruta = entrada.nextLine();
-                        exportarInforme(topIdioma(), ruta);
+                        exportarInforme(informePais(), ruta);
                         salir3 = true;
                         break;
 
@@ -64,7 +65,7 @@ public class Menu3 {
                         System.out.println("Elige una opción correcta (a-c)");
                 }
 
-            } catch (Exception ex) {
+            } catch (IOException ex) {
                 System.out.println("Elige una opción correcta (a-c)");
             }
 

@@ -7,22 +7,51 @@ package logica;
 import dao.Curso;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 /**
  *
- * @author Ivan
+ * @author ivan
  */
 public class Informe {
+    
+    /**
+     * OBTIENE LAS PLAZAS OFERTADAS EN CADA PAÍS DE DESTINO
+     * @return String con los datos del informe
+     */
+    public static String informePais() {
 
-    public static void informePais() {
+        HashMap<String, Integer> informe = new HashMap<>();
+        int contador;
+        String res;
+
+        for (Curso c : Datos.getListaSingleton()) {
+            if (!informe.isEmpty()) {
+                if (!informe.containsKey(c.getPais())) {
+                    contador = 0 + c.getPlazasOfertadas();
+                    informe.put(c.getPais(), contador);
+                    System.out.println("NUEVO PAIS AÑADIDO.");
+                } else {
+                    contador = informe.get(c.getPais());
+                    contador += c.getPlazasOfertadas();
+                    informe.replace(c.getPais(), contador);
+                }
+            } else {
+                informe.put(c.getPais(), c.getPlazasOfertadas());
+            }
+        }
+
+        System.out.println("INFORME PAISES::: " + informe);
+
+        res = "PLAZAS OFERTADAS SEGÚN EL PAÍS: \n" + informe.toString();
+
+        return res;
 
     }
 
     /**
-     * Método que calcula una media de las plazas ofertadas entre todas las
-     * universidades
-     *
-     * @return mediaPlazas
+     * CALCULA LA MEDIA DE LAS PLAZAS OFERTADAS ENTRE TODOS LOS CURSOS
+     * @return String con los datos del informe
      */
     public static String promedioPlazasOfertadas() {
 
@@ -40,16 +69,17 @@ public class Informe {
         System.out.println("TOTAL PLAZAS = " + totalPlazas);
         System.out.println("CONTADOR PLAZAS = " + contadorPlazas);
         System.out.println("MEDIA PLAZAS = " + mediaPlazas);
-        
+
         res = Double.toString(mediaPlazas);
+
+        res = ("La media de plazas ofertadas es de " + res);
 
         return res;
     }
 
     /**
-     * Método que calcula qué idioma es el más solicitado entre todos los cursos
-     *
-     * @return
+     * OBTIENE EL IDIOMA MÁS SOLICITADO ENTRE TODOS LOS CURSOS
+     * @return String con los datos del informe
      */
     public static String topIdioma() {
 
@@ -67,14 +97,17 @@ public class Informe {
             contador = Collections.frequency(idiomas, i);
             if (maxContador < contador) {
                 maxContador = contador;
-                if(!i.equals("No Informado"))
-                topIdioma = i;
+                if (!i.equals("No Informado")) {
+                    topIdioma = i;
+                }
             }
         }
 
-        System.out.println("El idioma más solicitado es: " + topIdioma + " " + maxContador + " veces.");
+        topIdioma = ("El idioma más solicitado es: " + topIdioma + " " + maxContador + " veces.");
+
+        System.out.println(topIdioma);
 
         return topIdioma;
     }
-    
+
 }

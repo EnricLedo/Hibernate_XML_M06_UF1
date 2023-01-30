@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ * CLASE QUE ALMACENA TODOS LOS CURSOS
  * @author ivan
  */
 

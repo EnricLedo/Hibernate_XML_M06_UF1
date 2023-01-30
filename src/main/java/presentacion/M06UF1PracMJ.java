@@ -18,13 +18,12 @@ import static presentacion.Menu4.mostrarMenu4;
 import static presentacion.Menu5.mostrarMenu5;
 
 /**
- *
+ * CLASE MAIN QUE EJECUTA LA APLICACIÓN
  * @author ivan
  */
 public class M06UF1PracMJ {
 
     public static final Scanner entrada = new Scanner(System.in);
-    //public static File archivoXml;
 
     public static void main(String[] args) throws JAXBException, IOException {
         boolean salir = false;
@@ -93,7 +92,7 @@ public class M06UF1PracMJ {
 
                         case 0:
                             /**
-                             * MENÚ OPCIÓN 0
+                             * MENÚ OPCIÓN 0 - SALIR DE LA APLICACIÓN
                              */
                             System.out.println("\nHas salido de la aplicación.");
                             salir = true;

@@ -14,7 +14,7 @@ import static logica.Busqueda.buscarUniversidad;
 import static presentacion.M06UF1PracMJ.entrada;
 
 /**
- *
+ * MENÚ 4: DA LA OPCIÓN DE BUSCAR LOS CURSOS SEGÚN UNA SERIE DE CATEGORÍAS A ESCOGER POR EL USUARIO
  * @author ivan
  */
 public class Menu4 {
