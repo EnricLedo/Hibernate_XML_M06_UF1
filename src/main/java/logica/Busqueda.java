@@ -16,8 +16,7 @@ import static presentacion.M06UF1PracMJ.entrada;
 public class Busqueda {
 
     /**
-     * BUSCAR COINCIDENCIAS EN XML
-     *
+     * BUSCAR COINCIDENCIAS SEGÚN EL ÁREA DE ESTUDIOS
      * @throws javax.xml.bind.JAXBException
      */
     public static void buscarAreaEstudios() throws JAXBException {
@@ -39,7 +38,11 @@ public class Busqueda {
             System.out.println("No se han encontrado coincidencias con: " + area);
         }
     }
-
+    
+    /**
+     * BUSCAR COINCIDENCIAS SEGÚN EL CENTRO
+     * @throws JAXBException 
+     */
     public static void buscarCentro() throws JAXBException {
 
         ArrayList<Curso> listaBusqueda = new ArrayList<>();
@@ -59,7 +62,11 @@ public class Busqueda {
             System.out.println("No se han encontrado coincidencias con: " + centro);
         }
     }
-
+    
+    /**
+     * BUSCAR COINCIDENCIAS SEGÚN EL IDIOMA
+     * @throws JAXBException 
+     */
     public static void buscarIdioma() throws JAXBException {
 
         ArrayList<Curso> listaBusqueda = new ArrayList<>();
@@ -79,7 +86,11 @@ public class Busqueda {
             System.out.println("No se han encontrado coincidencias con: " + idioma);
         }
     }
-
+    
+    /**
+     * BUSCAR COINCIDENCIAS SEGÚN EL PAÍS
+     * @throws JAXBException 
+     */
     public static void buscarPais() throws JAXBException {
 
         ArrayList<Curso> listaBusqueda = new ArrayList<>();
@@ -99,7 +110,11 @@ public class Busqueda {
             System.out.println("No se han encontrado coincidencias con: " + pais);
         }
     }
-
+    
+    /**
+     * BUSCAR COINCIDENCIAS SEGÚN LA UNIVERSIDAD
+     * @throws JAXBException 
+     */
     public static void buscarUniversidad() throws JAXBException {
 
         ArrayList<Curso> listaBusqueda = new ArrayList<>();
@@ -119,7 +134,11 @@ public class Busqueda {
             System.out.println("No se han encontrado coincidencias con: " + universidad);
         }
     }
-
+    
+    /**
+     * BUSCAR COINCIDENCIAS SEGÚN LAS PLAZAS OFERTADAS
+     * @throws JAXBException 
+     */
     public static void buscarPlazasOfertadas() throws JAXBException {
 
         ArrayList<Curso> listaBusqueda = new ArrayList<>();
@@ -146,8 +165,8 @@ public class Busqueda {
     
     /**
      * COMPRUEBA SI UN STRING ES UN ENTERO
-     * @param cadena
-     * @return 
+     * @param cadena String que se compara
+     * @return true o false
      */
     public static boolean isNumeric(String cadena) {
         try {

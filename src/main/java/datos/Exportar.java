@@ -10,14 +10,20 @@ import java.io.IOException;
 
 /**
  *
- * @author Ivan
+ * @author ivan
  */
 public class Exportar {
-
+    
+    /**
+     * EXPORTA UN INFORME 
+     * @param informe String con los datos del informe generado en la Clase Informe
+     * @param ruta String con la ruta solicitada al usuario que define donde se guardará el informe
+     * @throws IOException 
+     */
     public static void exportarInforme(String informe, String ruta) throws IOException {
         try {
             File archivo = new File(ruta);
-            FileWriter fw = new FileWriter(archivo, true);
+            FileWriter fw = new FileWriter(archivo);
             fw.write(informe);
             fw.close();
         } catch (IOException ex) {

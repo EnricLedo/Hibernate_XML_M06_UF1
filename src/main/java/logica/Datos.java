@@ -8,7 +8,7 @@ import dao.Curso;
 import java.util.ArrayList;
 
 /**
- *
+ * CLASE SINGLETON PARA ACCEDER A LOS DATOS DEL XML IMPORTADO
  * @author ivan
  */
 public class Datos {
