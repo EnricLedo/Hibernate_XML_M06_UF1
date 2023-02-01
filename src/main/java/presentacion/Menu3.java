@@ -32,7 +32,7 @@ public class Menu3 {
                     + "\t (c) Idioma más solicitado.");
 
             try {
-                sOpcion = entrada.nextLine();
+                sOpcion = entrada.nextLine().toLowerCase();
                 switch (sOpcion) {
                     case "a":
                         System.out.println("Has elegido generar el informe por País.");

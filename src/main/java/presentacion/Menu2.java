@@ -23,7 +23,7 @@ public class Menu2 {
         while (!sOpcion.equals("c") && !sOpcion.equals("d")) {
             System.out.println("Introduce una opción correcta (c/d).\n");
             System.out.println("2.2 Cifrar(c)/Descifrar(d):");
-            sOpcion = entrada.nextLine();
+            sOpcion = entrada.nextLine().toLowerCase();
         }
 
         if (sOpcion.equals("c")) {

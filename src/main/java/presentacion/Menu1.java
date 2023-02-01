@@ -21,7 +21,7 @@ public class Menu1 {
 
         while (!sOpcion.equals("x") && !sOpcion.equals("c")) {
             System.out.println("1.1 Elige el formato de exportación XML(x) o CSV(c):");
-            sOpcion = entrada.nextLine();
+            sOpcion = entrada.nextLine().toLowerCase();
         }
 
         System.out.println("1.2 Indica el archivo que quieres exportar:");
@@ -37,7 +37,7 @@ public class Menu1 {
                     + "\t (e) Universidad. \n"
                     + "\t (f) Plazas ofertadas.");
             try {
-                sOpcion = entrada.nextLine();
+                sOpcion = entrada.nextLine().toLowerCase();
 
                 switch (sOpcion) {
                     case "a":
