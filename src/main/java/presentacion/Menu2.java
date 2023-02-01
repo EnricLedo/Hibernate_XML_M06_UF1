@@ -4,6 +4,7 @@
  */
 package presentacion;
 
+import static logica.CifrarDescifrar.cifrar;
 import static presentacion.M06UF1PracMJ.entrada;
 
 /**
@@ -27,12 +28,17 @@ public class Menu2 {
         }
 
         if (sOpcion.equals("c")) {
-            System.out.println("2.3 Introduce la clave de cifrado (tiene que ser alfanumérica):");
-            entrada.next();
-            clave = entrada.nextLine();
+            while(true)
+            {
+                System.out.println("2.3 Introduce la clave de cifrado (mínimo de 4 carácteres):");
+                clave=entrada.nextLine();
+                if(clave.length()>3)
+                    break;
+            }
             System.out.println("2.4 Indica dónde se creará el nuevo archivo:");
             ruta = entrada.nextLine();
-            System.out.println("2.5 El fichero se ha cifrado correctamente. \n");
+            String mensajeCifrado = cifrar(clave, "String");
+            
 
         } else {
             System.out.println("2.3 Introduce la clave de descifrado (tiene que ser alfanumérica):");
