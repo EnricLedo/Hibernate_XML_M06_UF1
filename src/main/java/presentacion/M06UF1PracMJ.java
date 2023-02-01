@@ -23,7 +23,7 @@ import static presentacion.Menu5.mostrarMenu5;
  */
 public class M06UF1PracMJ {
 
-    public static final Scanner entrada = new Scanner(System.in);
+    public static Scanner entrada = new Scanner(System.in);
 
     public static void main(String[] args) throws JAXBException, IOException {
         boolean salir = false;

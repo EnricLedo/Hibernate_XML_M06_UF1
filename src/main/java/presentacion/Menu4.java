@@ -4,6 +4,7 @@
  */
 package presentacion;
 
+import java.util.Scanner;
 import javax.xml.bind.JAXBException;
 import static logica.Busqueda.buscarAreaEstudios;
 import static logica.Busqueda.buscarCentro;
@@ -34,7 +35,9 @@ public class Menu4 {
                     + "\t (f) Plazas ofertadas.");
 
             try {
-                sOpcion = entrada.nextLine();
+                // Limpiamos el buffer de Scanner
+                entrada = new Scanner(System.in);
+                sOpcion = entrada.nextLine().toLowerCase();
                 switch (sOpcion) {
                     case "a":
                         buscarAreaEstudios();
