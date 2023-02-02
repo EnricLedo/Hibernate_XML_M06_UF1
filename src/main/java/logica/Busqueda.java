@@ -37,8 +37,9 @@ public class Busqueda {
             for (Curso c : listaBusqueda) {
                 System.out.println(c);
             }
+            System.out.println();
         } else {
-            System.out.println("No se han encontrado coincidencias con: " + area);
+            System.out.println("No se han encontrado coincidencias con: " + area + "\n");
         }
     }
 
@@ -54,7 +55,9 @@ public class Busqueda {
         String centro = entrada.nextLine();
 
         // Formateamos el centro para que coincida con el formato del XML
-        primeraLetraMayuscula(centro);
+        if(centro.length() > 0) {
+           centro = primeraLetraMayuscula(centro); 
+        }
 
         for (Curso c : Datos.getListaSingleton()) {
             if (c.getCentro().contains(centro) && !centro.isBlank()) {
@@ -67,8 +70,9 @@ public class Busqueda {
             for (Curso c : listaBusqueda) {
                 System.out.println(c);
             }
+            System.out.println();
         } else {
-            System.out.println("No se han encontrado coincidencias con: " + centro);
+            System.out.println("No se han encontrado coincidencias con: " + centro + "\n");
         }
     }
 
@@ -96,8 +100,9 @@ public class Busqueda {
             for (Curso c : listaBusqueda) {
                 System.out.println(c);
             }
+            System.out.println();
         } else {
-            System.out.println("No se han encontrado coincidencias con: " + idioma);
+            System.out.println("No se han encontrado coincidencias con: " + idioma + "\n");
         }
     }
 
@@ -113,7 +118,9 @@ public class Busqueda {
         String pais = entrada.nextLine();
 
         // Formateamos el pais para que coincida con el formato del XML
-        pais = pais.toUpperCase().charAt(0) + pais.substring(1, pais.length()).toLowerCase();
+        if(pais.length() > 0) {
+           pais = pais.toUpperCase().charAt(0) + pais.substring(1, pais.length()).toLowerCase(); 
+        }
 
         for (Curso c : Datos.getListaSingleton()) {
             if (c.getPais().contains(pais) && !pais.isBlank()) {
@@ -126,8 +133,9 @@ public class Busqueda {
             for (Curso c : listaBusqueda) {
                 System.out.println(c);
             }
+            System.out.println();
         } else {
-            System.out.println("No se han encontrado coincidencias con: " + pais);
+            System.out.println("No se han encontrado coincidencias con: " + pais + "\n");
         }
     }
 
@@ -141,8 +149,7 @@ public class Busqueda {
         ArrayList<Curso> listaBusqueda = new ArrayList<>();
         System.out.println("4.1 Introduce la Universidad que deseas buscar (Ejemplo: Hochschule Coburg):");
         String universidad = entrada.nextLine();
-        primeraLetraMayusculaCadaPalabra(universidad);
-        System.out.println("UNIVERSIDAD::: " + universidad);
+        universidad = primeraLetraMayusculaCadaPalabra(universidad);
 
         for (Curso c : Datos.getListaSingleton()) {
             if (c.getUniversidad().contains(universidad) && !universidad.isBlank()) {
@@ -155,8 +162,9 @@ public class Busqueda {
             for (Curso c : listaBusqueda) {
                 System.out.println(c);
             }
+            System.out.println();
         } else {
-            System.out.println("No se han encontrado coincidencias con: " + universidad);
+            System.out.println("No se han encontrado coincidencias con: " + universidad + "\n");
         }
     }
 
@@ -171,8 +179,8 @@ public class Busqueda {
         System.out.println("4.1 Introduce las Plazas Ofertadas que deseas buscar (Ejemplo: 2):");
         String pOfertadas = entrada.nextLine();
 
-        while (!isNumeric(pOfertadas)) {
-            System.out.println("Introduce un número entero positivo.");
+        while (!isNumeric(pOfertadas) || Integer.parseInt(pOfertadas) < 0) {
+            System.out.println("Introduce un número >= 0.");
             pOfertadas = entrada.nextLine();
         }
 
@@ -187,8 +195,9 @@ public class Busqueda {
             for (Curso c : listaBusqueda) {
                 System.out.println(c);
             }
+            System.out.println();
         } else {
-            System.out.println("No se han encontrado coincidencias con: " + pOfertadas);
+            System.out.println("No se han encontrado coincidencias con: " + pOfertadas + "\n");
         }
     }
 

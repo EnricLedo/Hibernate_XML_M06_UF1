@@ -12,8 +12,9 @@ import static logica.Informe.topIdioma;
 import static presentacion.M06UF1PracMJ.entrada;
 
 /**
- * MENÚ 3: DA LA OPCIÓN DE MOSTRAR UN INFORME SEGÚN UN TIPO DE DATOS Y 
- * ALMACENAR EL RESULTADO EN UN ARCHIVO A ELECCIÓN DEL USUARIO
+ * MENÚ 3: DA LA OPCIÓN DE MOSTRAR UN INFORME SEGÚN UN TIPO DE DATOS Y ALMACENAR
+ * EL RESULTADO EN UN ARCHIVO A ELECCIÓN DEL USUARIO
+ *
  * @author ivan
  */
 public class Menu3 {
@@ -39,7 +40,9 @@ public class Menu3 {
                         informePais();
                         System.out.println("3.2 Indica dónde se guardará el informe:");
                         ruta = entrada.nextLine();
-                        exportarInforme(informePais(), ruta);
+                        if (exportarInforme(informePais(), ruta)) {
+                            System.out.println("3.3 Se ha generado el informe correctamente. \n");
+                        }
                         salir3 = true;
                         break;
 
@@ -48,7 +51,9 @@ public class Menu3 {
                         promedioPlazasOfertadas();
                         System.out.println("3.2 Indica dónde se guardará el informe:");
                         ruta = entrada.nextLine();
-                        exportarInforme(promedioPlazasOfertadas(), ruta);
+                        if (exportarInforme(promedioPlazasOfertadas(), ruta)) {
+                            System.out.println("3.3 Se ha generado el informe correctamente. \n");
+                        }
                         salir3 = true;
                         break;
 
@@ -57,21 +62,22 @@ public class Menu3 {
                         topIdioma();
                         System.out.println("3.2 Indica dónde se guardará el informe:");
                         ruta = entrada.nextLine();
-                        exportarInforme(topIdioma(), ruta);
+                        if (exportarInforme(topIdioma(), ruta)) {
+                            System.out.println("3.3 Se ha generado el informe correctamente. \n");
+                        }
                         salir3 = true;
                         break;
 
                     default:
-                        System.out.println("Elige una opción correcta (a-c)");
+                        System.out.println("Elige una opción correcta (a-c).");
                 }
 
             } catch (IOException ex) {
-                System.out.println("Elige una opción correcta (a-c)");
+                System.out.println("Elige una opción correcta (a-c).");
             }
 
         } while (!salir3);
 
-        System.out.println("3.3 Se ha generado el informe correctamente. \n");
     }
 
 }

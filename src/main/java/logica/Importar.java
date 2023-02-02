@@ -18,7 +18,7 @@ public class Importar {
 
     /**
      * IMPORTACIÓN DEL ARCHIVO XML
-     * @param file
+     * @param file archivo XML que deseas importar
      * @throws javax.xml.bind.JAXBException
      */
     public static void importarXml(File file) throws JAXBException {
