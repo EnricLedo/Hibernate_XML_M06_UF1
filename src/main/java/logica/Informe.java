@@ -30,7 +30,6 @@ public class Informe {
                 if (!informe.containsKey(c.getPais())) {
                     contador = 0 + c.getPlazasOfertadas();
                     informe.put(c.getPais(), contador);
-                    System.out.println("NUEVO PAIS AÑADIDO.");
                 } else {
                     contador = informe.get(c.getPais());
                     contador += c.getPlazasOfertadas();
@@ -41,9 +40,9 @@ public class Informe {
             }
         }
 
-        System.out.println("INFORME PAISES::: " + informe);
-
         res = "PLAZAS OFERTADAS SEGÚN EL PAÍS: \n" + informe.toString();
+        
+        System.out.println(res + "\n");
 
         return res;
 
@@ -65,14 +64,11 @@ public class Informe {
         }
 
         mediaPlazas = totalPlazas / contadorPlazas;
-
-        System.out.println("TOTAL PLAZAS = " + totalPlazas);
-        System.out.println("CONTADOR PLAZAS = " + contadorPlazas);
-        System.out.println("MEDIA PLAZAS = " + mediaPlazas);
-
         res = Double.toString(mediaPlazas);
 
         res = ("La media de plazas ofertadas es de " + res);
+        
+        System.out.println(res + "\n");
 
         return res;
     }
@@ -104,8 +100,8 @@ public class Informe {
         }
 
         topIdioma = ("El idioma más solicitado es: " + topIdioma + " " + maxContador + " veces.");
-
-        System.out.println(topIdioma);
+        
+        System.out.println(topIdioma + "\n");
 
         return topIdioma;
     }
