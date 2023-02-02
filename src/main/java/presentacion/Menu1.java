@@ -7,7 +7,7 @@ package presentacion;
 import static presentacion.M06UF1PracMJ.entrada;
 
 /**
- *
+ * MENÚ 1: DA LA OPCIÓN DE EXPORTAR UN FICHERO EN FORMATO XML/CSV
  * @author ivan
  */
 public class Menu1 {

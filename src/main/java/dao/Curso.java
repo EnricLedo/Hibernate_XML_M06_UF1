@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ * CLASE QUE ALMACENA LOS DATOS DE CADA CURSO
  * @author ivan
  */
 
@@ -101,7 +101,7 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "Curso{" + "programa=" + programa + ", areaEstudios=" + areaEstudios + ", centro=" + centro + ", idioma=" + idioma + ", pais=" + pais + ", universidad=" + universidad + ", plazasOfertadas=" + plazasOfertadas + '}';
+        return "CURSO - " + "Programa: " + programa + ", AreaEstudios: " + areaEstudios + ", Centro: " + centro + ", Idioma: " + idioma + ", Pais: " + pais + ", Universidad: " + universidad + ", PlazasOfertadas: " + plazasOfertadas;
     }    
     
 }

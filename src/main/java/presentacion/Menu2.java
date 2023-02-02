@@ -4,16 +4,17 @@
  */
 package presentacion;
 
-import static logica.CifrarDescifrar.cifrar;
+import java.io.IOException;
 import static presentacion.M06UF1PracMJ.entrada;
+import logica.CifrarDescifrar;
 
 /**
- *
+ * MENÚ 2: DA LA OPCIÓN DE CIFRAR/DESCIFRAR UN FICHERO
  * @author ivan
  */
 public class Menu2 {
 
-    public static void mostrarMenu2() {
+    public static void mostrarMenu2() throws IOException {
         String sOpcion = "", ruta, clave;
 
         System.out.println("\n2. Cifrar/Descifrar el fichero.");
@@ -28,17 +29,18 @@ public class Menu2 {
         }
 
         if (sOpcion.equals("c")) {
-            while(true)
-            {
-                System.out.println("2.3 Introduce la clave de cifrado (mínimo de 4 carácteres):");
-                clave=entrada.nextLine();
-                if(clave.length()>3)
-                    break;
-            }
+            boolean claveCorrecta;
+            do{
+                System.out.println("2.3 Introduce la clave de cifrado (tiene que ser alfanumérica) (más concretamente comprende valores entre (char) 33 y (char) 126):");
+                entrada.next();
+                clave = entrada.nextLine();
+                claveCorrecta = CifrarDescifrar.comprovarClau(clave);
+            }while(!claveCorrecta);
+            
             System.out.println("2.4 Indica dónde se creará el nuevo archivo:");
             ruta = entrada.nextLine();
-            String mensajeCifrado = cifrar(clave, "String");
-            
+            CifrarDescifrar.cifrar(clave, ruta);
+            System.out.println("2.5 El fichero se ha cifrado correctamente. \n");
 
         } else {
             System.out.println("2.3 Introduce la clave de descifrado (tiene que ser alfanumérica):");
@@ -46,6 +48,7 @@ public class Menu2 {
             clave = entrada.nextLine();
             System.out.println("2.4 Indica dónde se creará el nuevo archivo:");
             ruta = entrada.nextLine();
+            CifrarDescifrar.descifrar(clave, ruta);
             System.out.println("2.5 El fichero se ha descifrado correctamente. \n");
         }
 
